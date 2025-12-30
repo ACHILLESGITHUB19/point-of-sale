@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dinein.css">
+    <title>Dine-In Order</title>
+</head>
+<body>
+    <form id="dineInForm" action="/dinein" method="post">
+        <h2>Dine-In Order</h2>
+
+        <label for="tableNumber">Table Number:</label>
+        <input type="text" id="tableNumber" name="tableNumber" placeholder="Enter table number" required>
+
+        <label for="orderDetails">Order Details:</label>
+        <textarea id="orderDetails" name="orderDetails" placeholder="Enter items and quantity" rows="5" required></textarea>
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('dineInForm');
+        form.addEventListener('submit', (e) => {
+            const table = document.getElementById('tableNumber').value.trim();
+            const order = document.getElementById('orderDetails').value.trim();
+
+            if (!table || !order) {
+                e.preventDefault();
+                alert("Please fill in all fields before submitting!");
+            } else {
+                alert(`Order submitted for Table ${table}`);
+            }
+        });
+    </script>
+</body>
+</html>

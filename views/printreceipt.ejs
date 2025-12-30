@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/staff.css">
+    <title>Staff | Print Receipt</title>
+</head>
+<body>
+
+    <nav class="staff-navbar">
+        <h1>Staff Dashboard</h1>
+        <ul>
+            <li><a href="/staffdashboard">Staff Dashboard</a></li>
+            <li><a href="/order">Orders</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="staff-content">
+
+        <section class="card">
+            <h2>Print Receipt</h2>
+            <p class="subtitle">Enter the Order ID to print a receipt</p>
+
+            <form action="/printreceipt" method="post" class="receipt-form">
+
+                <div class="form-group">
+                    <label for="orderId">Order ID</label>
+                    <input
+                        type="text"
+                        id="orderId"
+                        name="orderId"
+                        required
+                        autofocus>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Print Receipt
+                    </button>
+                    <a href="/staffdashboard" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>

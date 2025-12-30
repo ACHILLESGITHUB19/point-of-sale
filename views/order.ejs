@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/staff.css">
+    <title>Staff | Orders</title>
+</head>
+<body>
+
+    <!-- Staff Navbar -->
+    <nav class="staff-navbar">
+        <h1>Staff Dashboard</h1>
+        <ul>
+            <li><a href="/staffdashboard">Staff Dashboard</a></li>
+            <li><a href="/staff/printreceipt">Print Receipt</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="staff-content">
+
+        <section class="card">
+            <div class="card-header">
+                <h2>Orders</h2>
+                <span class="badge">Today</span>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="table-wrapper">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Total (₱)</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example Row (replace with <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orders</title>
+</head>
+<body>
+    <div class="order-container">
+        <h2>Orders Page</h2>
+        <p>This is the orders page.</p>
+    </div>
+</body>
+</html>EJS loop) -->
+                        <tr>
+                            <td>ORD-10234</td>
+                            <td>Walk-in</td>
+                            <td>350.00</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>2025-01-02</td>
+                            <td>
+                                <a href="/staff/orders/ORD-10234" class="btn btn-view">View</a>
+                                <a href="/staff/printreceipt?orderId=ORD-10234" class="btn btn-print">Print</a>
+                            </td>
+                        </tr>
+
+                        <!-- Empty state -->
+                        <!--
+                        <tr>
+                            <td colspan="6" class="empty">No orders found</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

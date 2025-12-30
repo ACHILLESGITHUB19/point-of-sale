@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/takeout.css">
+    <title>Takeout</title>
+</head>
+<body>
+
+<div class="takeout-container">
+    <h2>Takeout Order</h2>
+    <form action="/takeout" method="post">
+        <div class="form-group">
+            <label for="customerName">Customer Name</label>
+            <input type="text" id="customerName" name="customerName" placeholder="Enter customer name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="orderDetails">Order Details</label>
+            <textarea id="orderDetails" name="orderDetails" placeholder="Enter items and quantity" required></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Submit Order</button>
+        </div>
+
+        <div class="form-actions">
+            <a href="/staffdashboard" class="back-link">Back to staffdashboard</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

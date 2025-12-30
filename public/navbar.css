@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: green;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: rgb(20, 208, 67);
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar flex */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;               /* medium height */
+    background: rgb(31, 79, 31);
+    padding: 0 20px;
+}
+
+/* Logo inside navbar */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;                  /* gap between logo and brand name */
+}
+
+.navbar .logo img {
+    width: 60px;                /* medium logo size */
+    height: 60px;               /* medium logo size */
+    object-fit: cover;
+    border-radius: 50%;         /* circle logo */
+}
+
+/* Navbar links */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;                  /* medium gap between links */
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive navbar */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .navbar ul li a {
+        width: 100%;
+    }
+}
+
+.navbar ul li a:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+button {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 5px;
+    margin-right: 100px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+.stats-container {
+  position: fixed;
+  left: 0;
+  top: 80px;           
+  width: 260px;
+  height: calc(100vh - 60px);
+  background: rgb(13, 143, 10);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  box-shadow: 4px 0 10px rgba(6, 6, 6, 0.4);
+}
+
+
+.stat-card {
+  background: #09781f;
+  padding: 15px;
+  border-radius: 12px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  font-size: 26px;
+  font-weight: bold;
+  color: #22c55e;
+}
+

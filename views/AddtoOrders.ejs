@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/AddtoOrders.css">
+    <title>Staff | Add Order</title>
+</head>
+<body>
+
+<div class="order-container">
+
+    <h1>Staff Dashboard</h1>
+    <h2>Add Order</h2>
+
+    <form action="/AddtoOrders" method="post" class="order-form">
+
+        <div class="form-group">
+            <label for="orderType">Order Type</label>
+            <select id="orderType" name="orderType" required>
+                <option value="">Select Order Type</option>
+                <option value="DINE-IN">Dine In</option>
+                <option value="TAKE-OUT">Take Out</option>
+            </select>
+        </div>
+
+        <div class="form-group" id="tableField" hidden>
+            <label for="tableNumber">Table Number</label>
+            <input type="text" id="tableNumber" name="tableNumber" placeholder="Table number">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="Rice Bowl Meal">Rice Bowl Meal</option>
+                <option value="Hot Sizzlings">Hot Sizzlings</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Party Tray">Party Tray</option>
+                <option value="Coffee & Tea">Coffee & Tea</option>
+                <option value="Milk Tea">Milk Tea</option>
+                <option value="Frappe">Frappe</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="itemName">Menu Item</label>
+            <select id="itemName" name="itemName" required>
+                <option value="">Select Item</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Add Item</button>
+            <a href="/staff/dashboard" class="btn-secondary">Back</a>
+        </div>
+
+    </form>
+
+</div>
+
+<script>
+const menuItems = {
+    "Frappe": [
+        "Matcha Green Tea",
+        "Salted Caramel",
+        "Rocky Road",
+        "Cookies & Cream",
+        "Dark Choco",
+        "Strawberry Cream"
+    ],
+    "Milk Tea": [
+        "Caramel",
+        "Cookies & Cream",
+        "Dark Choco",
+        "Matcha Green Tea",
+        "Okinawa",
+        "Wintermelon"
+    ],
+    "Coffee & Tea": [
+        "Espresso Hot",
+        "Cafe Americano",
+        "Cafe Latte",
+        "Mocha Latte",
+        "Vanilla Latte",
+        "Caramel Macchiato",
+        "Green Tea Latte"
+    ],
+    "Drinks": [
+        "Cucumber Lemonade",
+        "Blue Lemonade",
+        "Red Tea",
+        "Calamansi Juice",
+        "Soda (Mismo)",
+        "Soda (1.5 L)"
+    ],
+    "Hot Sizzlings": [
+        "Sizzling Pork Sisig",
+        "Sizzling Liempo",
+        "Sizzling Fried Chicken"
+    ],
+    "Rice Bowl Meal": [
+        "Korean Spicy Bulgogi (Pork)",
+        "Korean Salt & Pepper (Pork)",
+        "Crispy Pork Lechon Kawali",
+        "Cream Dory Fish Fillet",
+        "Buttered Honey Chicken",
+        "Chicken Adobo",
+        "Pork Shanghai"
+    ],
+    "Party Tray": [
+        "Pancit Bihon",
+        "Pancit Canton",
+        "Spaghetti",
+        "Creamy Carbonara",
+        "Tuyo Pesto",
+        "Kare-Kare",
+        "Chicken Buffalo Wings"
+    ]
+};
+
+const categorySelect = document.getElementById("category");
+const itemSelect = document.getElementById("itemName");
+const orderType = document.getElementById("orderType");
+const tableField = document.getElementById("tableField");
+const tableInput = document.getElementById("tableNumber");
+
+orderType.addEventListener("change", () => {
+    const dineIn = orderType.value === "DINE-IN";
+    tableField.hidden = !dineIn;
+    tableInput.required = dineIn;
+});
+
+categorySelect.addEventListener("change", () => {
+    itemSelect.innerHTML = '<option value="">Select Item</option>';
+
+    const items = menuItems[categorySelect.value];
+    if (!items) return;
+
+    items.forEach(item => {
+        const option = document.createElement("option");
+        option.value = item;
+        option.textContent = item;
+        itemSelect.appendChild(option);
+    });
+});
+</script>
+
+</body>
+</html>

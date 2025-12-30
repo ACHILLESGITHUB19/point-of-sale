@@ -1,0 +1,131 @@
+/* Box-sizing for all elements */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: #0f4d11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+form {
+    background-color: #14772b;
+    padding: 20px 30px;
+    border-radius: 30px;
+    border: 2px solid #c3e6cb;
+    box-shadow: 6px 11px 15px rgba(52, 48, 48, 0.7);
+    width: 600px;        /* Default for desktop */
+    max-width: 90%;      /* Responsive width */
+    text-align: center;
+}
+
+/* Logo */
+form .logo-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    border: 3px solid whitesmoke;
+    background-color: #23a134;
+    display: block;
+}
+
+/* Brand name */
+form .gray-brandname {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+}
+
+/* Inputs and selects */
+form input, form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Button */
+form button {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+.message {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+form p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+form a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    color: whitesmoke;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+}
+
+/* Password wrapper */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 50px; /* extra space for toggle icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password img {
+    width: 20px;
+    height: 20px;
+}
+
+
