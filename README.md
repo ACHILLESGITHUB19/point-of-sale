@@ -145,3 +145,6 @@ This project is free to use **for educational and academic purposes only**.
 ---
 
 > ⚠️ **Reminder:** Do not deploy or use this system in a real business environment.
+# pos-mobile-version
+# pos-mobile-version
+# pos-mobile-version
